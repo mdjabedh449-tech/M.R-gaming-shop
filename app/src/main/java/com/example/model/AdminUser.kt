@@ -1,5 +1,4 @@
 package com.example.model
-
 data class AdminUser(
     val id: String,
     val email: String,
