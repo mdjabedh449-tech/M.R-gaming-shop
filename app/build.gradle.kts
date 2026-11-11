@@ -1,5 +1,4 @@
 import com.google.gms.googleservices.GoogleServicesPlugin.MissingGoogleServicesStrategy
-
 plugins {
   alias(libs.plugins.android.application)
   alias(libs.plugins.kotlin.compose)
@@ -7,12 +6,10 @@ plugins {
   alias(libs.plugins.secrets)
   alias(libs.plugins.google.services)
 }
-
 android {
   namespace = "com.example"
   compileSdk { version = release(36) { minorApiLevel = 1 } }
-
-  defaultConfig {
+defaultConfig {
     applicationId = "com.aistudio.mrgamezoneadmin.kxmpzq"
     minSdk = 24
     targetSdk = 36
@@ -21,8 +18,7 @@ android {
 
     testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
   }
-
-  // Do not remove or modify these signingConfigs. They are necessary for building, installing,
+// Do not remove or modify these signingConfigs. They are necessary for building, installing,
   // and updating Android apps in AI Studio.
   signingConfigs {
     create("release") {
@@ -39,8 +35,7 @@ android {
       keyPassword = "android"
     }
   }
-
-  buildTypes {
+ buildTypes {
     release {
       isCrunchPngs = false
       isMinifyEnabled = false
@@ -69,7 +64,6 @@ android {
     includeInBundle = true
   }
 }
-
 // Configure the Secrets Gradle Plugin to use .env and .env.example files
 // to match the convention used in Web projects.
 secrets {
@@ -77,9 +71,7 @@ secrets {
   defaultPropertiesFileName = ".env.example"
   ignoreList.add("FIREBASE_APPCHECK_DEBUG_TOKEN")
 }
-
 googleServices { missingGoogleServicesStrategy = MissingGoogleServicesStrategy.WARN }
-
 // Some unused dependencies are commented out below instead of being removed.
 // This makes it easy to add them back in the future if needed.
 dependencies {
